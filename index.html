@@ -2,10 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Personal Site</title>
+  <title>Angelina D'Amico</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Add your HTML content here -->
+  <!-- The whole page content is wrapped in a div for easy centering -->
+  <div class="container">
+    <header>
+      <!-- Wrapper for header content to make it wider -->
+      <div class="header-content">
+        <h1>Angelina D'Amico</h1>
+        <nav>
+          <a href="#about">About Me</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <!-- Profile and About section side by side using a flex container -->
+      <div class="profile-about-container">
+        <!-- Profile picture section -->
+        <section id="profile-picture">
+          <!-- Replace 'profile.jpg' with your own image file name -->
+          <img src="img/headshot2.jpg" alt="Profile picture of Angelina D'Amico" style="width:150px;">
+          <!-- Removed border-radius so the image is a rectangle instead of an oval -->
+        </section>
+        <section id="about">
+          <h2>About Me</h2>
+          <p>I am pursuing a Bachelor’s degree in Digital Media at Arizona State University, where I am developing a strong foundation in creative design and digital communication. I am passionate about leveraging creativity and innovative media solutions to support and empower others in achieving their goals.</p>
+        </section>
+      </div>
+      <hr class="section-line"><!-- Line between sections -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <!-- Logos removed, only skill names are listed below -->
+        <div class="skills-rows">
+          <!-- Top row: 3 skills -->
+          <ul class="skills-list">
+            <li><span>HTML</span></li>
+            <li><span>CSS</span></li>
+            <li><span>JavaScript</span></li>
+          </ul>
+          <!-- Bottom row: 3 skills -->
+          <ul class="skills-list">
+            <li><span>WordPress</span></li>
+            <li><span>Adobe Creative Suite</span></li>
+            <li><span>Canva</span></li>
+          </ul>
+        </div>
+        <!-- Only skill names are shown now -->
+      </section>
+      <hr class="section-line"><!-- Line between sections -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-list">
+          <div class="project">
+            <h3>My Projects</h3>
+            <p>Projects coming soon.</p>
+          </div>
+          <!-- Add more projects as you create them -->
+        </div>
+      </section>
+      <hr class="section-line"><!-- Line between sections -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:navetta04@gmail.com">navetta04@gmail.com</a></p>
+        <p>Phone Number: (347) 659-4836</p>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Angelina D'Amico</p>
+    </footer>
+  </div>
 </body>
 </html>

@@ -1,1 +1,195 @@
-/* Add you CSS here */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #ecf9fc;
+  background: #ecf9fc;
+  margin: 0;
+  padding: 0;
+}
+
+/* Center the container using margin auto and text-align */
+.container {
+  max-width: 1300px; /* Limit the width for better readability */
+  margin: 0 auto;    /* Center horizontally */
+  text-align: center; /* Center text inside the container */
+  padding: 8px; /* Reduced from default for less space around content */
+}
+
+/* Make the header bar stretch across the whole screen */
+header {
+  width: 100%; /* Full width of the screen */
+  background: #ecf9fc;
+  border-bottom: 1px solid #eee;
+  padding: 24px 0 12px 0;
+  text-align: center;
+  box-sizing: border-box; /* Include padding in the width */
+  margin-bottom: 10px; /* Remove extra space below header */
+  /* Removed box-shadow so there is no shadow behind the header background */
+}
+header h1 {
+  margin: 0 0 8px 0;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  text-align: center; /* Center the main heading */
+  color: #31a4c4; /* You can change this color if you want a different shade */
+}
+
+/* Add a white strip behind the nav bar for better separation */
+nav {
+  background: #31a4c4;
+  border-radius: 6px;
+  padding: 10px 0;
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: Constantia, serif;
+}
+
+nav a {
+  color: #ecf9fc;
+  text-decoration: none;
+  margin: 0 16px;
+  font-weight: 500;
+  transition: color 0.2s;
+  /* Use the Constantia font for the navigation bar */
+  font-family: Constantia, serif;
+}
+nav a:hover {
+  color: #31a4c4;
+}
+main {
+  max-width: 1300px;
+  margin: 0 auto;
+  background: #ecf9fc;
+  /* Removed border-radius to make the background edges straight */
+  /* Removed box-shadow so there is no shadow behind the background */
+  padding: 32px 24px;
+  margin-top: 0; /* Remove extra space above main content */
+}
+section {
+  margin-bottom: 40px;
+}
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #31a4c4;;
+  text-align: center; /* Center section headings */
+}
+ul {
+  padding-left: 10px; /* Default is 40px, 10px brings bullets closer */
+}
+
+/* Center the project list and items */
+.project-list {
+  display: block; /* Use block for simple layout */
+  margin: 0 auto;
+}
+.project {
+  background: #f9fdff;
+  border-radius: 6px;
+  padding: 16px;
+  margin: 0 auto 20px auto;
+  text-align: center; /* Center project items */
+}
+
+footer {
+  text-align: center;
+  padding: 18px 0;
+  color: #31a4c4; /* You can change this color if you want a different shade */
+  color: #31a4c4; /* You can change this color if you want a different shade */
+  background: #31a4c4;
+  border-top: 1px solid #eee;
+  color: #ecf9fc;
+  font-size: 0.95rem;
+}
+
+/* Show the skills horizontally using flexbox (beginner-friendly) */
+.skills-list {
+  display: flex; /* Arrange items in a row */
+  flex-wrap: wrap; /* Move to next line if too many skills */
+  justify-content: center; /* Center the skills horizontally */
+  gap: 20px; /* Space between each skill */
+  list-style: none; /* Remove default bullets */
+  padding-left: 0; /* Remove left padding */
+  margin: 0; /* Remove default margin */
+}
+.skills-list li {
+  display: flex; /* Align logo and text side by side */
+  align-items: center; /* Vertically center logo and text */
+  font-size: 1rem;
+}
+
+/* Use the Georgia font for all headings to make them stand out */
+h1, h2, h3 {
+  font-family: Georgia, serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  main {
+    padding: 16px 8px;
+  }
+  nav a {
+    margin: 0 8px;
+  }
+}
+
+/* Make the header content box wider than the main content */
+.header-content {
+  max-width: 900px; /* Wider than the main content */
+  margin: 0 auto;   /* Center the header content */
+  padding: 0 24px;  /* Add some side padding */
+}
+
+/* Use Constantia font for the About section paragraph */
+#about p {
+  font-family: Constantia, serif;
+}
+
+/* Use Constantia font for skill names under Skills section */
+.skills-list span {
+  font-family: Constantia, serif;
+  display: block;
+  margin-top: 6px;
+}
+
+/* Use Constantia font for contact info under Contact section */
+#contact p, #contact a {
+  font-family: Constantia, serif;
+}
+
+/* Style for the line between sections. Uses the same color as headings. */
+.section-line {
+  border: none;
+  border-top: 2px solid #31a4c4; /* Same color as headings */
+  margin: 32px 0; /* Space above and below the line */
+  width: 80%; /* Make the line a bit shorter than the section width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make the About Me section narrower for better readability */
+#about {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Align the About Me heading to the left for better readability */
+#about h2 {
+  text-align: left;
+}
+
+/* Show profile photo and About Me section side by side using flexbox */
+.profile-about-container {
+  display: flex; /* Arrange children in a row */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Center the whole group horizontally */
+  gap: 32px; /* Space between photo and about section */
+  margin-bottom: 32px;
+}
+#profile-picture {
+  flex: 0 0 auto; /* Prevent profile photo from stretching */
+}
+#about {
+  max-width: 500px;
+  margin: 0;
+  text-align: left; /* Align text to the left for readability */
+}
