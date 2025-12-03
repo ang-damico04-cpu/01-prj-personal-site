@@ -14,7 +14,7 @@
         <h1>Angelina D'Amico</h1>
         <nav>
           <a href="#about">About Me</a>
-          <a href="#skills">Skills</a>
+          <a href="#skills">Skills/Certifications</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -36,33 +36,75 @@
       </div>
       <hr class="section-line"><!-- Line between sections -->
       <section id="skills">
-        <h2>Skills</h2>
-        <!-- Logos removed, only skill names are listed below -->
-        <div class="skills-rows">
-          <!-- Top row: 3 skills -->
-          <ul class="skills-list">
-            <li><span>HTML</span></li>
-            <li><span>CSS</span></li>
-            <li><span>JavaScript</span></li>
-          </ul>
-          <!-- Bottom row: 3 skills -->
-          <ul class="skills-list">
-            <li><span>WordPress</span></li>
-            <li><span>Adobe Creative Suite</span></li>
-            <li><span>Canva</span></li>
-          </ul>
+        <h2>Skills/Certifications</h2>
+        <!-- Put certificate image to the left of skills using a simple flex container -->
+        <div class="skills-container">
+          <!-- Replace path with your image file. Spaces are URL-encoded here. -->
+          <img src="img/web%20dev%20cert.png" alt="Web development certificate" class="skills-badge">
+          <div class="skills-rows">
+            <!-- Top row: 4 skills -->
+            <ul class="skills-list">
+              <li><span>HTML</span></li>
+              <li><span>CSS</span></li>
+              <li><span>JavaScript</span></li>
+              <li><span>WordPress</span></li>
+            </ul>
+            <!-- Bottom row: 4 skills -->
+            <ul class="skills-list">
+              <li><span>Adobe Creative Suite</span></li>
+              <li><span>Canva</span></li>
+              <li><span>Figma</span></li>
+              <li><span>Github</span></li>
+            </ul>
+          </div>
         </div>
-        <!-- Only skill names are shown now -->
+         <!-- Only skill names are shown now -->
       </section>
       <hr class="section-line"><!-- Line between sections -->
       <section id="projects">
         <h2>Projects</h2>
-        <div class="project-list">
-          <div class="project">
-            <h3>My Projects</h3>
-            <p>Projects coming soon.</p>
-          </div>
-          <!-- Add more projects as you create them -->
+        <div class="projects-scroll-container">
+          <!-- Make the entire card clickable by wrapping it in a link -->
+          <a href="https://ang-damico04-cpu.github.io/09-nasa-space-explorer-v2/" target="_blank" class="project-link">
+            <div class="project-card">
+              <h3>NASA Space Explorer</h3>
+              <div class="project-embed">
+                <iframe src="https://ang-damico04-cpu.github.io/09-nasa-space-explorer-v2/" 
+                        title="NASA Space Explorer Project"
+                        scrolling="no">
+                </iframe>
+              </div>
+              <p>Interactive space exploration website featuring NASA data and imagery.</p>
+            </div>
+          </a>
+          
+          <!-- Make the entire card clickable by wrapping it in a link -->
+          <a href="https://ang-damico04-cpu.github.io/08-prj-loreal-chatbot/" target="_blank" class="project-link">
+            <div class="project-card">
+              <h3>L'Oreal Chatbot</h3>
+              <div class="project-embed">
+                <iframe src="https://ang-damico04-cpu.github.io/08-prj-loreal-chatbot/" 
+                        title="L'Oreal Chatbot Project"
+                        scrolling="no">
+                </iframe>
+              </div>
+              <p>AI-powered beauty consultation chatbot for personalized product recommendations.</p>
+            </div>
+          </a>
+          
+          <!-- Make the entire card clickable by wrapping it in a link -->
+          <a href="https://ang-damico04-cpu.github.io/05-cw-game-water-drop2/" target="_blank" class="project-link">
+            <div class="project-card">
+              <h3>Water Drop Game</h3>
+              <div class="project-embed">
+                <iframe src="https://ang-damico04-cpu.github.io/05-cw-game-water-drop2/" 
+                        title="Water Drop Game Project"
+                        scrolling="no">
+                </iframe>
+              </div>
+              <p>Interactive browser game with engaging water drop mechanics.</p>
+            </div>
+          </a>
         </div>
       </section>
       <hr class="section-line"><!-- Line between sections -->

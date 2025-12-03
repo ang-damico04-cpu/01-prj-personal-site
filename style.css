@@ -53,7 +53,7 @@ nav a {
   font-family: Constantia, serif;
 }
 nav a:hover {
-  color: #31a4c4;
+  color: #064f63;
 }
 main {
   max-width: 1300px;
@@ -115,6 +115,33 @@ footer {
   display: flex; /* Align logo and text side by side */
   align-items: center; /* Vertically center logo and text */
   font-size: 1rem;
+}
+/* New styles for showing the certificate image to the left of skills */
+.skills-container {
+  display: flex; /* place image and skills side by side */
+  align-items: center; /* vertically center the image with skill lists */
+  justify-content: center; /* center the whole group horizontally */
+  gap: 20px; /* space between image and skills */
+  margin: 0 auto 16px auto; /* center container and add bottom space */
+}
+
+/* Size the certificate image and prevent it from being too large */
+.skills-badge {
+  max-width: 150px; /* keep the image small and readable */
+  width: 100%;
+  height: auto; /* maintain aspect ratio */
+  display: block;
+}
+
+/* On small screens, stack the image above the skills for readability */
+@media (max-width: 600px) {
+  .skills-container {
+    flex-direction: column; /* stack vertically */
+    gap: 12px; /* smaller gap when stacked */
+  }
+  .skills-badge {
+    max-width: 200px; /* allow a bit more width when stacked */
+  }
 }
 
 /* Use the Georgia font for all headings to make them stand out */
@@ -192,4 +219,108 @@ h1, h2, h3 {
   max-width: 500px;
   margin: 0;
   text-align: left; /* Align text to the left for readability */
+}
+
+/* Remove old project styles and replace with new scrolling layout */
+.projects-scroll-container {
+  display: flex; /* Arrange project cards in a horizontal row */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  gap: 24px; /* Space between each project card */
+  padding: 16px 0; /* Add some vertical padding */
+  margin: 0 auto; /* Center the container */
+  justify-content: center; /* Center the cards horizontally */
+}
+
+/* Style for the clickable project links */
+.project-link {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Keep the same text color */
+  display: block; /* Make the link fill the whole card area */
+}
+
+/* Add hover effect when mouse goes over the card */
+.project-link:hover .project-card {
+  transform: translateY(-2px); /* Lift the card slightly when hovered */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Make shadow darker when hovered */
+}
+
+/* Style each individual project card */
+.project-card {
+  background: #f9fdff; /* Light background for each card */
+  border-radius: 8px; /* Rounded corners */
+  padding: 16px; /* Inner spacing */
+  min-width: 280px; /* Minimum width so cards don't get too small */
+  max-width: 280px; /* Maximum width to keep cards uniform */
+  flex: 0 0 auto; /* Prevent cards from shrinking or growing */
+  text-align: center; /* Center the content inside each card */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: all 0.2s ease; /* Smooth transition for hover effects */
+  cursor: pointer; /* Show pointer cursor to indicate it's clickable */
+}
+
+/* Style the embedded website preview */
+.project-embed {
+  width: 100%; /* Take full width of the card */
+  height: 160px; /* Keep fixed height for consistent card sizes */
+  margin: 10px 0; /* Space above and below the embed */
+  border-radius: 6px; /* Rounded corners */
+  overflow: hidden; /* Hide any content that overflows - removes scrollbars */
+  border: 2px solid #31a4c4; /* Border matching your theme color */
+}
+
+/* Style the iframe that shows the actual website */
+.project-embed iframe {
+  width: 100%; /* Fill the embed container */
+  height: 100%; /* Fill the embed container */
+  border: none; /* Remove default iframe border */
+  border-radius: 4px; /* Slightly rounded corners */
+  transform: scale(0.5); /* Scale down the webpage to fit better */
+  transform-origin: 0 0; /* Scale from top-left corner */
+  width: 200%; /* Make iframe larger so scaling shows more content */
+  height: 200%; /* Make iframe larger so scaling shows more content */
+}
+
+/* Style project card headings */
+.project-card h3 {
+  color: #31a4c4; /* Match your theme color */
+  margin-bottom: 8px; /* Space below the heading */
+  font-size: 1.2rem; /* Slightly larger than normal text */
+}
+
+/* Style project descriptions */
+.project-card p {
+  font-family: Constantia, serif; /* Match your other text styling */
+  color: #555; /* Slightly darker text for readability */
+  font-size: 0.9rem; /* Slightly smaller description text */
+  line-height: 1.4; /* Better line spacing for readability */
+  margin: 0; /* Remove default paragraph margins */
+}
+
+/* Add scrollbar styling for better appearance */
+.projects-scroll-container::-webkit-scrollbar {
+  height: 8px; /* Make horizontal scrollbar thinner */
+}
+
+.projects-scroll-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Light background for scrollbar track */
+  border-radius: 4px; /* Rounded scrollbar track */
+}
+
+.projects-scroll-container::-webkit-scrollbar-thumb {
+  background: #31a4c4; /* Use your theme color for scrollbar thumb */
+  border-radius: 4px; /* Rounded scrollbar thumb */
+}
+
+/* Make cards stack vertically on small screens for better mobile experience */
+@media (max-width: 600px) {
+  .projects-scroll-container {
+    flex-direction: column; /* Stack cards vertically on small screens */
+    overflow-x: visible; /* Remove horizontal scroll on mobile */
+    align-items: center; /* Center cards on mobile */
+  }
+  
+  .project-card {
+    min-width: 240px; /* Reduced smaller minimum width for mobile from 280px to 240px */
+    max-width: 260px; /* Reduced smaller maximum width for mobile from 320px to 260px */
+  }
 }
