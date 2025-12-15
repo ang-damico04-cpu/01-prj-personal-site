@@ -226,9 +226,12 @@ h1, h2, h3 {
   display: flex; /* Arrange project cards in a horizontal row */
   overflow-x: auto; /* Allow horizontal scrolling */
   gap: 24px; /* Space between each project card */
-  padding: 16px 0; /* Add some vertical padding */
+  padding: 16px 16px; /* <-- added horizontal padding so first/last cards are not flush against the scroll edge */
   margin: 0 auto; /* Center the container */
-  justify-content: center; /* Center the cards horizontally */
+  /* When content is wider than the viewport, align cards to the start so scrolling aligns naturally */
+  justify-content: flex-start; /* <-- changed from center to flex-start */
+  max-width: 1000px; /* shorten the horizontal length of the scrollbar track */
+  scroll-padding-left: 16px; /* improve snapping/focus behavior so leftmost card is fully visible */
 }
 
 /* Style for the clickable project links */
@@ -293,12 +296,13 @@ h1, h2, h3 {
   color: #555; /* Slightly darker text for readability */
   font-size: 0.9rem; /* Slightly smaller description text */
   line-height: 1.4; /* Better line spacing for readability */
-  margin: 0; /* Remove default paragraph margins */
+  margin: 0;
+  text-align: left; /* Remove default paragraph margins */
 }
 
 /* Add scrollbar styling for better appearance */
 .projects-scroll-container::-webkit-scrollbar {
-  height: 8px; /* Make horizontal scrollbar thinner */
+  height: 6px; /* <-- changed from 8px to 6px to make the horizontal scrollbar thinner */
 }
 
 .projects-scroll-container::-webkit-scrollbar-track {
@@ -323,4 +327,69 @@ h1, h2, h3 {
     min-width: 240px; /* Reduced smaller minimum width for mobile from 280px to 240px */
     max-width: 260px; /* Reduced smaller maximum width for mobile from 320px to 260px */
   }
+}
+
+/* New: layout UX artifacts in two columns (beginner-friendly comments) */
+.ux-artifacts-container {
+  display: flex;              /* place cards side by side */
+  flex-wrap: wrap;           /* allow wrapping to next row */
+  gap: 24px;                 /* space between cards */
+  justify-content: center;   /* center the group horizontally */
+  max-width: 1100px;         /* limit width so two columns look good */
+  margin: 0 auto 24px auto;  /* center container and add bottom space */
+  padding: 0 16px;           /* small side padding so cards don't touch edges */
+}
+
+/* Ensure images inside cards scale to the card width */
+.ux-artifact-card .ux-artifact-image {
+  max-width: 640px;           /* smaller image on desktop */
+  height: auto;              /* keep aspect ratio */
+  display: block;
+  margin: 8px auto;          /* center the image horizontally */
+}
+
+/* Small screens: stack cards vertically for readability */
+@media (max-width: 720px) {
+  .ux-artifacts-container {
+    flex-direction: column;  /* stack cards */
+    align-items: center;     /* center when stacked */
+  }
+  .ux-artifact-card {
+    flex: 1 1 100%;
+    max-width: 360px;        /* narrower cards on mobile */
+  }
+}
+
+/* Reduce displayed size of UX artifact images (keeps actual file unchanged).
+   Beginner-friendly comments explain each rule. */
+.ux-artifact-image {
+  max-width: 32px;    /* limit image width so artifacts appear smaller */
+  width: 100%;         /* allow image to shrink inside its container */
+  height: auto;        /* keep aspect ratio */
+  display: block;      /* treat as block so margin auto centers it */
+  margin: 8px auto;    /* small spacing and center alignment */
+}
+
+/* Slightly smaller on narrow screens for better layout */
+@media (max-width: 600px) {
+  .ux-artifact-image {
+    max-width: 120px;  /* smaller mobile maximum so images remain compact on phones */
+  }
+}
+
+/* Center all content inside UX artifact cards */
+.ux-artifact-card {
+  text-align: center; /* Center headings, images, and text */
+}
+
+/* Style UX artifact card headings */
+.ux-artifact-card h3 {
+  color: #31a4c4; /* Match your theme color */
+  margin-bottom: 12px; /* Space below the heading */
+  font-size: 1.2rem; /* Slightly larger than normal text */
+}
+
+/* Style UX artifact descriptions */
+.ux-artifact-card p {
+  font-family: Constantia, serif; /* Match your other text styling */
 }
