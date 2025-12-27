@@ -1,7 +1,7 @@
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: #ecf9fc;
-  background: #ecf9fc;
+  background: #ffffff;
+  background: #ffffff;
   margin: 0;
   padding: 0;
 }
@@ -18,7 +18,7 @@ body {
 header {
   width: 100%; /* Full width of the screen */
   background: #ecf9fc;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ffffff;
   padding: 24px 0 12px 0;
   text-align: center;
   box-sizing: border-box; /* Include padding in the width */
@@ -29,22 +29,22 @@ header h1 {
   margin: 0 0 8px 0;
   font-size: 2.2rem;
   letter-spacing: 1px;
-  text-align: center; /* Center the main heading */
+  text-align: left; /* changed from center to left */
   color: #31a4c4; /* You can change this color if you want a different shade */
 }
 
 /* Add a white strip behind the nav bar for better separation */
 nav {
-  background: #31a4c4;
+  background:#ecf9fc;
   border-radius: 6px;
   padding: 10px 0;
   margin-bottom: 8px;
-  text-align: center;
+  text-align: right; /* align nav items to the right */
   font-family: Constantia, serif;
 }
 
 nav a {
-  color: #ecf9fc;
+  color: #31a4c4;
   text-decoration: none;
   margin: 0 16px;
   font-weight: 500;
@@ -58,7 +58,7 @@ nav a:hover {
 main {
   max-width: 1300px;
   margin: 0 auto;
-  background: #ecf9fc;
+  background: #ffffff;
   /* Removed border-radius to make the background edges straight */
   /* Removed box-shadow so there is no shadow behind the background */
   padding: 32px 24px;
@@ -95,9 +95,9 @@ footer {
   padding: 18px 0;
   color: #31a4c4; /* You can change this color if you want a different shade */
   color: #31a4c4; /* You can change this color if you want a different shade */
-  background: #31a4c4;
+  background: #ecf9fc;;
   border-top: 1px solid #eee;
-  color: #ecf9fc;
+  color: #31a4c4;
   font-size: 0.95rem;
 }
 
@@ -164,6 +164,20 @@ h1, h2, h3 {
   max-width: 900px; /* Wider than the main content */
   margin: 0 auto;   /* Center the header content */
   padding: 0 24px;  /* Add some side padding */
+  display: flex;              /* place title and nav on one row */
+  justify-content: space-between; /* title left, nav right */
+  align-items: center;        /* vertically center title and nav */
+}
+
+/* Responsive: stack header items on small screens */
+@media (max-width: 600px) {
+  .header-content {
+    flex-direction: column;
+    gap: 8px;
+  }
+  nav {
+    text-align: center; /* center nav when stacked */
+  }
 }
 
 /* Use Constantia font for the About section paragraph */
@@ -333,16 +347,27 @@ h1, h2, h3 {
 .ux-artifacts-container {
   display: flex;              /* place cards side by side */
   flex-wrap: wrap;           /* allow wrapping to next row */
-  gap: 24px;                 /* space between cards */
+  gap: 24px;                 /* space between cards */ /* <-- fixed missing semicolon */
   justify-content: center;   /* center the group horizontally */
+  align-items: center;       /* vertically center cards inside the row */
   max-width: 1100px;         /* limit width so two columns look good */
   margin: 0 auto 24px auto;  /* center container and add bottom space */
   padding: 0 16px;           /* small side padding so cards don't touch edges */
 }
 
+/* Ensure cards are centered and have a readable width */
+.ux-artifact-card {
+  text-align: center;        /* Center headings, images, and text */
+  margin: 0 auto;            /* center each card inside the flex container */
+  flex: 0 1 48%;             /* allow two-column layout, shrink on small screens */
+  max-width: 520px;          /* cap card width for readability */
+  box-sizing: border-box;    /* include padding in width calculations */
+}
+
 /* Ensure images inside cards scale to the card width */
 .ux-artifact-card .ux-artifact-image {
-  max-width: 640px;           /* smaller image on desktop */
+  max-width: 320px;          /* make artifact images large enough to see */
+  width: 100%;
   height: auto;              /* keep aspect ratio */
   display: block;
   margin: 8px auto;          /* center the image horizontally */
@@ -375,21 +400,4 @@ h1, h2, h3 {
   .ux-artifact-image {
     max-width: 120px;  /* smaller mobile maximum so images remain compact on phones */
   }
-}
-
-/* Center all content inside UX artifact cards */
-.ux-artifact-card {
-  text-align: center; /* Center headings, images, and text */
-}
-
-/* Style UX artifact card headings */
-.ux-artifact-card h3 {
-  color: #31a4c4; /* Match your theme color */
-  margin-bottom: 12px; /* Space below the heading */
-  font-size: 1.2rem; /* Slightly larger than normal text */
-}
-
-/* Style UX artifact descriptions */
-.ux-artifact-card p {
-  font-family: Constantia, serif; /* Match your other text styling */
 }
